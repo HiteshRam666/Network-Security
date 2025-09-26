@@ -4,7 +4,6 @@ numpy
 pymongo[srv]>=4.6,<5
 certifi
 scikit-learn
-dill 
 pyaml
 
 -e .
