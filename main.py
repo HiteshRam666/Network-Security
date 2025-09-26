@@ -2,11 +2,12 @@ from network_security.components.data_ingestion import DataIngestion
 from network_security.components.data_validation import DataValidation
 from network_security.components.data_ingestion import DataIngestion 
 from network_security.components.data_transformation import DataTransformation
+from network_security.components.model_trainer import ModelTrainer
 from network_security.exception.exception import NetworkSecurityException 
 import sys 
-from network_security.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from network_security.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 from network_security.entity.config_entity import TrainingPipelineConfig
-from network_security.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact
+from network_security.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
 from network_security.logging.logger import logging 
 from datetime import datetime
 
@@ -31,11 +32,17 @@ if __name__ == "__main__":
         data_transformation = DataTransformation(data_validation_artifact=data_validation_artifact, 
         data_transformation_config=datatransformationconfig)
         logging.info("Initiating Data Transformation") 
-        
         data_transformation_artifact = data_transformation.initiate_data_transformation() 
         logging.info("Data Transformation Completed") 
 
-        print(data_transformation_artifact)
+        logging.info("Model Training Started")
+        model_trainer_config = ModelTrainerConfig(training_pipeline_config) 
+        model_trainer = ModelTrainer(model_trainer_config=model_trainer_config, 
+        data_transformation_artifact=data_transformation_artifact) 
+        model_trainer_artifact = model_trainer.initiate_model_trainer()
+        logging.info("Model Trainer Artifact Created")
+ 
+        print(model_trainer_artifact)
     except Exception as e:
         raise NetworkSecurityException(e, sys)
 

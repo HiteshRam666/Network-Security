@@ -4,3 +4,4 @@ Network_Security.egg-info/
 network_security/logs/
 logs/
 Artifacts/
+mlruns/

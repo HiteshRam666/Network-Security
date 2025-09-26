@@ -5,5 +5,5 @@ pymongo[srv]>=4.6,<5
 certifi
 scikit-learn
 pyaml
-
+mlflow
 -e .
