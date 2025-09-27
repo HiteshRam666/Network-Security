@@ -39,14 +39,14 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
-templates = Jinja2Templates(directory="./templates") 
-
 @app.get("/", tags=["authentication"])
 async def index():
+    """Redirect root to Swagger docs."""
     return RedirectResponse(url = "/docs")
 
 @app.get("/train")
 async def train_route():
+    """Trigger model training pipeline."""
     try:
         train_pipeline = TrainingPipeline()
         train_pipeline.run_pipeline()
@@ -56,6 +56,10 @@ async def train_route():
 
 @app.post("/predict")
 async def predict_route(file: UploadFile = File(...)):
+    """
+    Predict on uploaded CSV file using trained model.
+    Returns a CSV with predictions.
+    """
     try:
         df = pd.read_csv(file.file)
 
