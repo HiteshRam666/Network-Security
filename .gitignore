@@ -6,3 +6,5 @@ logs/
 Artifacts/
 mlruns/
 final_models/
+predicted_data/
+validation_data/
