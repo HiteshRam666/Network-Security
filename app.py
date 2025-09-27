@@ -21,6 +21,7 @@ from dotenv import load_dotenv
 from network_security.utils.ml_utils.model.estimator import NetworkModel 
 load_dotenv() 
 
+# MongoDB Setup
 mongodb_url = os.getenv("MONGODB_URL_KEY")
 
 client = pymongo.MongoClient(mongodb_url)
@@ -28,6 +29,7 @@ client = pymongo.MongoClient(mongodb_url)
 database = client[DATA_INGESTION_DATABASE_NAME] 
 collection = database[DATA_INGESTION_COLLECTION_NAME]
 
+# FastAPI App
 app = FastAPI() 
 origins = ["*"]
 
@@ -39,6 +41,7 @@ app.add_middleware(
     allow_headers = ["*"]
 )
 
+# Routes
 @app.get("/", tags=["authentication"])
 async def index():
     """Redirect root to Swagger docs."""
