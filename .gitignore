@@ -5,3 +5,4 @@ network_security/logs/
 logs/
 Artifacts/
 mlruns/
+final_models/

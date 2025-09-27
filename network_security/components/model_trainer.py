@@ -20,7 +20,11 @@ from sklearn.ensemble import (
     GradientBoostingClassifier
 )
 from xgboost import XGBClassifier
+
 import mlflow
+import dagshub
+dagshub.init(repo_owner='HiteshRam666', repo_name='Network-Security', mlflow=True)
+mlflow.set_experiment("Network-Security")
 
 class ModelTrainer:
     def __init__(self, model_trainer_config: ModelTrainerConfig, data_transformation_artifact: DataTransformationArtifact):
@@ -39,7 +43,8 @@ class ModelTrainer:
             mlflow.log_metric("f1_score", f1_score)
             mlflow.log_metric("precision_score", precision_score)
             mlflow.log_metric("recall_score", recall_score)
-            mlflow.sklearn.log_model(best_model, "model")
+
+            # mlflow.sklearn.log_model(best_model, "model")
 
     def train_model(self, x_train, y_train, x_test, y_test):
         models = {
@@ -111,6 +116,8 @@ class ModelTrainer:
 
         network_model = NetworkModel(preprocessor=preprocessor, model=best_model) 
         save_object(file_path=self.model_trainer_config.trained_model_file_path, obj=network_model)
+
+        save_object("final_models/model.pkl", best_model) # Saving best model
 
         ## Model Trainer Artifact 
         model_trainer_artifact = ModelTrainerArtifact(
