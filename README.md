@@ -7,7 +7,8 @@ A production-ready Network Security ML system that ingests network/phishing data
 # **Step-by-Step Pipeline**
 ![Data_ingestion](https://github.com/user-attachments/assets/ed5216ec-c88a-4a60-9d20-04354fdf2191)
 
-### 1) Data Ingestion
+## **1) Data Ingestion**
+![Data_ingestion (1)](https://github.com/user-attachments/assets/ef4c1aa0-63cd-413f-abe1-d7c4ae60a9f8)
 - **Source**: MongoDB collection (`MONGODB_URL_KEY`, `DATA_INGESTION_DATABASE_NAME`, `DATA_INGESTION_COLLECTION_NAME`)
 - **Process**: Read data, perform basic cleaning/splits, persist staged data in `Artifacts/<timestamp>/data_ingestion/`
 - **Output (artifact)**: `DataIngestionArtifact` with paths to ingested datasets
@@ -155,6 +156,7 @@ https://github.com/user-attachments/assets/15fb1adc-2815-4e1d-b9ad-b0ab45354cfa
 
 ### Train Model and Register artifacts on AWS (S3 bucket and ECR)
 https://github.com/user-attachments/assets/59f0ef35-459e-45e8-b5ce-e458fd37082e
+
 
 
 
