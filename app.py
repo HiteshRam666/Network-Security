@@ -57,7 +57,7 @@ async def train_route():
     except Exception as e:
         raise NetworkSecurityException(e, sys)
 
-@app.post("/predict")
+@app.post("/predict", description="Batch Prediction")
 async def predict_route(file: UploadFile = File(...)):
     """
     Predict on uploaded CSV file using trained model.
@@ -82,8 +82,6 @@ async def predict_route(file: UploadFile = File(...)):
         return FileResponse(output_file, filename=f"predictions_{file.filename}")
     except Expectation as e:
         raise NetworkSecurityException(e, sys)
-
-print("Hello")
 
 if __name__ == "__main__":
     app_run(app, host="localhost", port = 8000)
