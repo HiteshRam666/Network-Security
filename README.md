@@ -150,4 +150,9 @@ docker run -p 8080:8080 --env-file .env network-security:latest
 ## Demo of Project
 
 ### Batch Prediction
+https://github.com/user-attachments/assets/15fb1adc-2815-4e1d-b9ad-b0ab45354cfa
+
+### Train Model and Register artifacts on AWS (S3 bucket and ECR)
+https://github.com/user-attachments/assets/59f0ef35-459e-45e8-b5ce-e458fd37082e
+
 
