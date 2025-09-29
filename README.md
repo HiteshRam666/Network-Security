@@ -44,6 +44,10 @@ A production-ready Network Security ML system that ingests network/phishing data
 - **Process**: Load `final_models/preprocessor.pkl` + `final_models/model.pkl` via `NetworkModel`
 - **Output**: Returns a CSV file with an added `predicted_column`
 
+### 7) Deployment (Docker & AWS)
+![Untitled Diagram (1)](https://github.com/user-attachments/assets/26f9f16f-7890-4a34-9a9c-8d501961a450)
+
+
 ## Project Directory Structure🗃️
 ```
 .
@@ -157,6 +161,7 @@ https://github.com/user-attachments/assets/15fb1adc-2815-4e1d-b9ad-b0ab45354cfa
 
 ### Train Model and Register artifacts on AWS (S3 bucket and ECR)
 https://github.com/user-attachments/assets/59f0ef35-459e-45e8-b5ce-e458fd37082e
+
 
 
 
