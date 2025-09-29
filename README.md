@@ -13,7 +13,8 @@ A production-ready Network Security ML system that ingests network/phishing data
 - **Process**: Read data, perform basic cleaning/splits, persist staged data in `Artifacts/<timestamp>/data_ingestion/`
 - **Output (artifact)**: `DataIngestionArtifact` with paths to ingested datasets
 
-### 2) Data Validation
+## **2) Data Validation**
+![data_validation](https://github.com/user-attachments/assets/7a24d122-7c98-409a-99a0-99550927633e)
 - **Inputs**: `DataIngestionArtifact`, `data_schema/schema.yaml`
 - **Checks**: Column presence, datatypes, basic integrity
 - **Output (artifact)**: `DataValidationArtifact` referencing valid data and a report under `Artifacts/<timestamp>/data_validation/`
@@ -156,6 +157,7 @@ https://github.com/user-attachments/assets/15fb1adc-2815-4e1d-b9ad-b0ab45354cfa
 
 ### Train Model and Register artifacts on AWS (S3 bucket and ECR)
 https://github.com/user-attachments/assets/59f0ef35-459e-45e8-b5ce-e458fd37082e
+
 
 
 
