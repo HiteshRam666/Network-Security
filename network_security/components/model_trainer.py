@@ -117,7 +117,8 @@ class ModelTrainer:
         network_model = NetworkModel(preprocessor=preprocessor, model=best_model) 
         save_object(file_path=self.model_trainer_config.trained_model_file_path, obj=network_model)
 
-        save_object("final_models/model.pkl", best_model) # Saving best model
+        model_name_safe = best_model_name.replace(" ", "_").lower()
+        save_object(f"final_models/{model_name_safe}.pkl", best_model) # Saving Best model
 
         ## Model Trainer Artifact 
         model_trainer_artifact = ModelTrainerArtifact(
