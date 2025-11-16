@@ -22,6 +22,17 @@ This system analyzes 30+ URL features (IP address patterns, SSL states, domain c
 
 **Impact:** Automated phishing detection system that reduces manual security analysis time and improves threat detection accuracy.
 
+## Demo
+
+
+https://github.com/user-attachments/assets/25a76842-7648-4490-8f51-750de20e75bf
+
+
+https://github.com/user-attachments/assets/a1e02b93-3607-447c-a16d-a9f7faacce05
+
+
+
+
 ## ✨ Features
 
 - **RESTful API**: FastAPI-based endpoints for batch prediction and model training
@@ -530,3 +541,4 @@ This project is licensed under the MIT License.
 
 **Hitesh Ram**
 - Email: hiteshram321@gmail.com
+
