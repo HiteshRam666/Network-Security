@@ -188,7 +188,7 @@ pip install -r requirements.txt
 Create a `.env` file in the root directory:
 
 ```env
-MONGODB_URL_KEY=mongodb+srv://username:password@cluster.mongodb.net/
+MONGODB_URL_KEY=""
 ```
 
 ### Step 5: Setup MongoDB
@@ -541,4 +541,5 @@ This project is licensed under the MIT License.
 
 **Hitesh Ram**
 - Email: hiteshram321@gmail.com
+
 
